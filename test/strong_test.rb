@@ -1,4 +1,4 @@
-#2 runs, 2 assertions, 0 failures, 0 errors, 0 skips
+#3 runs, 3 assertions, 0 failures, 0 errors, 0 skips
 #is there anything else should I be testing for in unit testing?
 
 require 'minitest/autorun'
@@ -17,4 +17,7 @@ class HeaderTest < Minitest::Test
     assert_equal "This <strong>is</strong> <strong>pretty</strong> cool", @strong.make_strong("This **is** **pretty** cool")
   end
 
+  def test_will_not_do_anything_if_only_one_asteric_is_present
+    assert_equal "*This* is not strong", @strong.make_strong("*This* is not strong")
+  end
 end
